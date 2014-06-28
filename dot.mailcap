@@ -1,0 +1,17 @@
+#text/html;                     w3m -dump %s; nametemplate=%s.html; copiousoutput
+#text/html;  big5filter.sh %s %{charset} test=charset=%{charset} && test "`echo $charset | tr '[A-Z]' '[a-z]'`" eq "BIG5" ; nametemplate=%s.html; copiousoutput
+#text/html;  lynx -dump %s|piconv -f big5-cp950 -t utf8; nametemplate=%s.html; copiousoutput
+#text/html;  lynx -dump %s; nametemplate=%s.html; copiousoutput
+#text/html; big5filter.sh %s %{charset} ; nametemplate=%s.html; copiousoutput
+application/zip                 zipinfo %s ; copiousoutput
+application/x-bzip2             bzip -dc %s ; copiousoutput
+application/x-diff-gzip         zcat %s     ; copiousoutput
+application/x-gzip              zcat %s     ; copiousoutput
+application/x-zip-compressed    zipinfo %s ; copiousoutput
+application/x-tar-gz            gunzip -dc | tar -tf - ; copiousoutput
+#text/html; w3m -o document_charse=%{charset} %s; nametemplate=%s.html
+#text/html; w3m -dump -o document_charse=%{charset} %s; copiousoutput; description=HTML Text; nametemplate=%s.html
+#No w3m on alumni.cs
+#use lynx instead
+text/html; lynx -assume_charset=%{charset} -dump %s; copiousoutput; nametemplate=%s.html
+#text/html; lynx -dump -o document_charse=%{charset} %s; copiousoutput; description=HTML Text; nametemplate=%s.html

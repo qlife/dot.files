@@ -1,0 +1,28 @@
+# Generic key bindings.
+#bind	generic		<left>		previous-entry
+#bind	generic		<right>		next-entry
+
+# Specific key bindings.
+bind	index		"{"		previous-thread
+bind	index		"}"		next-thread
+bind	index,pager	"x"		noop
+bind	alias		" "		tag-entry
+#bind	attach		"v"		select-entry
+bind	compose		"v"		view-attach
+bind	pager		"{"		previous-thread
+bind	pager		"}"		next-thread
+bind	index		<up>		previous-entry
+bind	pager		<up>		previous-line
+bind	index		<down>		next-entry
+bind	pager		<down>		next-line
+bind	pager		<left>		previous-undeleted
+bind	pager		<right>		next-undeleted
+bind	pager		"t"		display-toggle-weed
+#bind	pager		"k"		previous-line
+#bind	pager		"j"		next-line
+bind	index,pager	"\Cb"		previous-page
+bind	index,pager	"\Cf"		next-page
+
+macro	index,pager	"y"		"<sync-mailbox><change-folder>?<toggle-mailboxes>"
+macro	index		"\ea"		"!$EDITOR $HOME/.mutt/aliase\n:source $HOME/.mutt/aliase\n" "Edit aliases file and reload it"
+macro	pager		"\ev"		"|gpg -v -o -|less -c\n" "View PGP key with signatures"

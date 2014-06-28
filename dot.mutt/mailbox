@@ -1,0 +1,2 @@
+mailboxes !                     # INBOX
+mailboxes `echo $HOME/Mail/*`   # Each mailbox in ~/Mail

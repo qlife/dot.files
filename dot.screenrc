@@ -1,6 +1,5 @@
 vbell off
 bell_msg "Meow Meow!! |-- %n"
-term xterm
 autodetach on
 startup_message off
 shell -$SHELL
